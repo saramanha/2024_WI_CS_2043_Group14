@@ -1,1 +1,42 @@
 
+public class flight{
+  
+  //inst. var.
+  private String country;      //change to country object soon
+  private double cost;
+  private String flightName;
+  private String insurance;    //change to insurance object soon
+
+  //class method
+  public Flight(String countryIn, double costIn, String nameIn, String insuranceIn){
+    country = countryIn;
+    cost = costIn;
+    flightName = nameIn;
+    insurance = insuranceIn;
+
+  }
+
+  //other methods
+
+  public String getDestination(){
+      return country;
+  }
+
+  public double getCost(){
+      return cost;
+  }
+
+  public String getName(){
+      return flightName;
+  }
+
+  public String getInsurance(){
+      return insurance;
+  }
+
+  //WIP method
+  public double calcCost(){
+      return 0;
+  }
+
+}
