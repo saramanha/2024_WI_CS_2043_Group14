@@ -1,0 +1,22 @@
+public class flightTestSpike {
+
+	public static void main(String[] args) {
+		Flight plane = new Flight("Canada", 321.50, "Canada Air", "Premium");
+		
+		//testing getting info
+		System.out.println("Plane Creation:");
+		plane.display();
+		System.out.println("\n");
+		
+		//Modifying plane information
+		System.out.println("Plane Modification:");
+		plane.setDestination("Ireland");
+		plane.setCost(4332.21);
+		plane.setName("Expedia");
+		plane.setInsurance("Deluxe");
+		
+		plane.display();
+		System.out.println("\n");
+	}
+	
+}
