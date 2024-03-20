@@ -1,0 +1,22 @@
+public class CurrencyConvertSpike {
+	
+	public static void main (String[] args) {
+		Flight plane = new Flight("Canada", 321.50, "Canada Air", "Premium");
+		Country america = new Country("USD", 1.35, "Sunny", 10.0);
+		CurrencyConversion usdToCad = new CurrencyConversion(america, plane);
+		
+		//testing getting info
+		System.out.println("Plane Creation:");
+		plane.display();
+		System.out.println("\n");
+		System.out.println("Country Creation:");
+		america.display();
+		System.out.println("\n");
+		
+		
+		//Testing out conversion rate
+		System.out.println("Flight costs before conversion (CAD): $" + plane.getCost());
+		plane.setCost(usdToCad.convert());
+		System.out.println("Flight costs after conversion (USD): $" + plane.getCost());
+	}
+}
