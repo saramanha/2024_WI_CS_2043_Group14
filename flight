@@ -17,24 +17,39 @@ public class Flight {
 
 		  //get methods
 
+		  /**
+		  * This method returns the name of the country the flight is headed.
+		  **/
 		  public String getDestination(){
 		      return country;
 		  }
 
+		  /**
+		  * This method returns the cost of the flight.
+		  **/
 		  public double getCost(){
 		      return cost;
 		  }
 
+		  /**
+		  * This method returns the name of the flight.
+		  **/
 		  public String getName(){
 		      return flightName;
 		  }
 
+		  /**
+		  * This method returns the flight insurance.
+		  **/
 		  public String getInsurance(){
 		      return insurance;
 		  }
 		  
 		  //set methods
-		  
+
+		  /**
+		  * This method sets the destination of the flight.
+		  **/
 		  public void setDestination(String countryIn) {
 			 country = countryIn;
 		  }
