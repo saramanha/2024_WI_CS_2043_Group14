@@ -1,20 +1,23 @@
 public class CurrencyConversion{
 
   //inst. var.
-  private String country; //Change to Country object when Country Class is implemented
+  private double countryRate;
+  private double flightCost; 
 
   //class method
-  public CurrencyConversion(String countryIn){
-    country = countryIn;
+  public CurrencyConversion(Country countryIn, Flight flightIn){
+    countryRate = countryIn.getConversionRate();
+    flightCost = flightIn.getCost();
   }
 
   //other methods
 
   /**
-  *  WIP Method - Converts flight cost currency to user's currency
+  *  Grabs the flight's costs and converts it into the user's country rate.
   **/
   public double convert(){
-    return 0;
+    double convertedCost = flightCost * countryRate;
+    return convertedCost;
   }
 
 }
