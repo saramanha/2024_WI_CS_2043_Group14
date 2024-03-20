@@ -10,8 +10,7 @@ public class User {
     private String password;
     private String mobile;
     private String address;
-
-    //TODO: add Travel and flight details
+    //private Flight flight;
 
     public User(String name, String paymentInfo, String password, String mobile, String address) {
         this.name = name;
@@ -40,6 +39,12 @@ public class User {
     public String getAddress() {
         return address;
     }
+
+    /*
+     * public void bookFlight(Flight flight) { 
+     * this.flight = flight; 
+     * }
+     */
 
     public void setName(String name) {
         this.name = name;
