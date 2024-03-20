@@ -13,6 +13,10 @@ public class Date {
 	}
 	
 	//other methods
+
+	public String getYear() {
+		return year;
+	}
 	
 	public String geMonth() {
 		return month;
@@ -20,6 +24,18 @@ public class Date {
 	
 	public String getDay() {
 		return day;
+	}
+
+	public void setYear(String yearIn) {
+		year = yearIn;
+	}
+	
+	public void setMonth(String monthIn) {
+		month = monthIn;
+	}
+	
+	public void setDay(String dayIn) {
+		day = dayIn;
 	}
 	
 	/**
