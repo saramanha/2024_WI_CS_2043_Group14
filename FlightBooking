@@ -50,17 +50,17 @@ public class FlightBooking {
 
   
   /**
-  *  WIP Method: Indicates that the customer booked the flight desired.
+  *  Allows the customer to choose from a list of selected flights, and sets their flight to it
   **/
   public void bookFlight(customer pass, Flight[] arr{
       System.out.println("We recommend these flight based on your search");
-      printFlights(arr);
+      printFlights(arr); //print the selection
       System.out.println("Please enter the flight you want to book:");
-      Scanner scanner = new Scanner(System.in);
+      Scanner scanner = new Scanner(System.in); //scan for input
       int choice = scanner.nextInt();
-      if (choice >= 0 && choice < arr.length) {
+      if (choice >= 0 && choice < arr.length) { //make sure input is in the selection
           System.out.println("You have chosen to book " + arr[choice].getName());
-          pass.setFlight(arr[choice])
+          pass.setFlight(arr[choice]) 
       } 
 
       else {
