@@ -1,0 +1,30 @@
+public class FlightBooking {
+
+  //inst. var.
+  private String passenger; //change to Customer object when added to main
+  private Flight bestFlight;
+
+  //class method
+  public FlightBooking(String passengerIn, flightIn){
+    passenger = passengerIn;
+    bestFlight = flightIn;
+  }
+
+  //other methods
+  /**
+  *  WIP Method: Should check the flights and make compares what the customer wants for the flight.
+  **/
+  public Flight findBestFlight(){
+      return bestFlight;
+  }
+
+  
+  /**
+  *  WIP Method: Indicates that the customer booked the flight desired.
+  **/
+  public void bookFlight(){
+    
+  }
+
+
+}
