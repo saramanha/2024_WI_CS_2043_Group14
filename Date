@@ -1,0 +1,34 @@
+public class Date {
+	
+	//inst. var.
+	private String year;
+	private String month;
+	private String day;
+	
+	//class method
+	public Date(String yearIn, String monthIn, String dayIn) {
+		year = yearIn;
+		month = monthIn;
+		day = dayIn;
+	}
+	
+	//other methods
+	
+	public String geMonth() {
+		return month;
+	}
+	
+	public String getDay() {
+		return day;
+	}
+	
+	/**
+	 * this method returns a string that shows month and day
+	 * @return year/month/day
+	 */
+	public String display() {
+		return year + "/" +  month + "/" + day;
+		
+	}
+
+}
