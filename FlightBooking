@@ -1,30 +1,81 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class FlightBooking {
 
-  //inst. var.
-  private String passenger; //change to Customer object when added to main
-  private Flight bestFlight;
+   // Instance variables
+ private Customer passenger;          // Changed to Customer object when added to main
+ private Flight customerFlight;       // Flight input by the customer
+ private ArrayList<Flight> allFlights; // List of all the flights in the system
+ private ArrayList<Flight> bestFlights; // List of best flights for the customer
 
-  //class method
-  public FlightBooking(String passengerIn, flightIn){
-    passenger = passengerIn;
-    bestFlight = flightIn;
-  }
+    // Constructor
+  public FlightBooking(Customer passengerIn, Flight flightIn) {
+        passenger = passengerIn;
+        customerFlight = flightIn;
+        allFlights = new ArrayList<Flight>();
+        bestFlights = new ArrayList<Flight>();
+    }
 
   //other methods
   /**
   *  WIP Method: Should check the flights and make compares what the customer wants for the flight.
   **/
-  public Flight findBestFlight(){
-      return bestFlight;
-  }
+   public ArrayList<Flight> findBestFlights() {
+        for (Flight flight : allFlights) { //loop through all the flights
+            int matches = 0; // Used to count how many matches we have so far with the customer's request
+
+            if (flight.getDestination().equals(customerFlight.getDestination())) {
+                matches++; // Add a match if we have the same destination as the customer's order
+            }
+
+            double cost = customerFlight.getCost();
+            if (cost * 0.75 <= flight.getCost() && flight.getCost() <= cost * 1.25) {
+                matches++; // Add a match if the cost of the flight is between 75% and 125% of the customer's order
+            }
+
+            if (Math.abs(flight.getTravelDate().compareTo(customerFlight.getTravelDate())) <= 7) {
+                matches++; // Add a match if the travel dates are within 7 days of the customer's order
+            }
+
+            if (matches > 0) {
+                bestFlights.add(flight); // Add the flight to the list of best flights if it has a match
+            }
+        }
+
+  
+
+        return bestFlights;
+    }
 
   
   /**
   *  WIP Method: Indicates that the customer booked the flight desired.
   **/
-  public void bookFlight(){
-    
+  public void bookFlight(customer pass, Flight[] arr{
+      System.out.println("We recommend these flight based on your search");
+      printFlights(arr);
+      System.out.println("Please enter the flight you want to book:");
+      Scanner scanner = new Scanner(System.in);
+      int choice = scanner.nextInt();
+      if (choice >= 0 && choice < arr.length) {
+          System.out.println("You have chosen to book " + arr[choice].getName());
+          pass.setFlight(arr[choice])
+      } 
+
+      else {
+            System.out.println("Please enter a valid flight number");
+        }
   }
+
+  public void printFlights(Flight[] arr){
+      for(int i = 0; i < arr.length(); i++){
+          System.out.println("Flight " + i + ": " + arr[i].getName());
+      {
+  }
+
+
+
 
 
 }
