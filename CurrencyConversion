@@ -1,0 +1,20 @@
+public class CurrencyConversion{
+
+  //inst. var.
+  private String country; //Change to Country object when Country Class is implemented
+
+  //class method
+  public CurrencyConversion(String countryIn){
+    country = countryIn;
+  }
+
+  //other methods
+
+  /**
+  *  WIP Method - Converts flight cost currency to user's currency
+  **/
+  public double convert(){
+    return 0;
+  }
+
+}
