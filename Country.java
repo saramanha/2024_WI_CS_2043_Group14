@@ -4,7 +4,7 @@ public class Country{
   private weatherIntegration weather
   private double temperature;
 
-  public Country(String currencyName, double conversion, waetherIntegration weather, double temperature){
+  public Country(String currencyName, double conversion, weatherIntegration weather, double temperature){
       this.currencyName = currencyName;
       this.conversion = conversion
       this.weather = weather;
