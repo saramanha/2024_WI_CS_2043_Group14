@@ -58,7 +58,29 @@ public class Driver {
                     }
                     if (!found) {
                         System.out.println("Invalid credentials.");
+                        break;
                     }
+
+                    System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Exit\nEnter your choice:");
+                    int choice = sc.nextInt();
+                    
+                    switch (choice) {
+                        case 1://book a flight
+                            
+                            break;
+
+                        case 2://review flight details
+
+                            break;
+
+                        case 3://exit
+
+                            break;
+                    
+                        default: //invalid choice
+                            break;
+                    }
+
                     break;
                 case 3:
                     sc.close();
