@@ -8,10 +8,13 @@ import java.util.Scanner;
 public class Driver {
 
     private static final String USER_FILENAME = "users.txt";
+    private static final String FLIGHT_FILENAME = "flights.txt";
+    private static final String COUNTRY_FILENAME = "countries.txt";
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userbase = loadUsers(); // file where user data is stored
+        ArrayList<Country> countries = loadCountries(); // file where country data is stored
 
         System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Register\n2. Login\n3. Exit\nEnter your choice:");
         int n = sc.nextInt();
@@ -74,6 +77,17 @@ public class Driver {
                                 sc.nextLine(); // consume the newline character
                                 System.out.println("Enter desired country:");
                                 String country = sc.nextLine();
+                                Country userCountry;
+
+                                for (Country countryCheck : countries) {
+                                    if (countryCheck.getCountryName().equals(country)) {
+                                        userCountry = countryCheck;
+                                    }
+                                    else {
+                                        System.out.println("Country not found. Please try again.");
+                                        break;
+                                    }
+                                }
             
                                 System.out.println("Enter your budget:");
                                 double cost = sc.nextDouble();
@@ -82,19 +96,49 @@ public class Driver {
                                 String[] date = sc.nextLine().split("/");
                                 Date departureDate = new Date(date[0], date[1], date[2]);
 
-                                Flight userFlight = new Flight(country, cost, "Flight", "", departureDate);
+                                Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
                                 FlightBooking fb = new FlightBooking(passenger, userFlight);
+
+                                ArrayList<Flight> flights = fb.findBestFlights();
+
+                                fb.bookFlight(passenger, flights.toArray(new Flight[flights.size()]));
 
     
                                 break;
+                            
     
                             case 2://review flight details
-                                System.out.println("Flight Details:");
-                                passenger.getFlight().display();
+                                if (passenger.getFlight() != null) {
+                                    System.out.println("Your flight details:");
+                                    passenger.getFlight().display();
+                                } else {
+                                    System.out.println("You have not booked a flight yet.");
+                                }
     
                                 break;
     
-                            case 3://exit
+                            case 3://currency converter
+                                sc.nextLine(); // consume the newline character
+                                System.out.println("Enter the country you want to convert to:");
+                                String countryName = sc.nextLine();
+
+                                CurrencyConversion converter = new CurrencyConversion(passenger.getFlight().getDestination(), passenger.getFlight());
+
+                                break;
+
+                            //WEATHER TRACKER NOT IMPLEMENTED YET WAITING ON KAILE
+                            //TODO: Implement weather tracker
+                            case 4://weather Tracker
+                                if (passenger.getFlight() != null) {
+                                    String output = passenger.getFlight().getDestination().getWeather().toString();
+                                    System.out.println(output);
+                                }
+                                else {
+                                    System.out.println("You have not booked a flight yet.");
+                                }
+                                break;
+
+                            case 5://exit
                                 System.out.println("Exiting...");
                                 break;
                         
@@ -156,5 +200,29 @@ public class Driver {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static ArrayList<Country> loadCountries() { //load countries from file
+        ArrayList<Country> countries = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(COUNTRY_FILENAME))) {
+            String line;
+
+            //break the country data into parts and fill arraylist with the countries 
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                String countryName = parts[0];
+                String currencyName = parts[1];
+                double conversion = Double.parseDouble(parts[2]);
+                double temperature = Double.parseDouble(parts[3]);
+
+                Country country = new Country(countryName, currencyName, conversion, temperature);
+                countries.add(country);
+            }
+
+        } catch (IOException e) {
+            return new ArrayList<>();
+        }
+        return countries;
     }
 }
