@@ -41,6 +41,7 @@ public class Driver {
                     System.out.println("User registered successfully!");
                     break;
                 case 2: //login existing user
+                    User passenger = null;
                     sc.nextLine(); // consume the newline character
                     System.out.println("Enter your name:");
                     String name1 = sc.nextLine();
@@ -52,6 +53,7 @@ public class Driver {
                     for (User user : userbase) {
                         if (user.getName().equals(name1) && user.getPassword().equals(password1)) {
                             System.out.println("Login successful!");
+                            passenger = user;
                             found = true;
                             break;
                         }
@@ -64,21 +66,44 @@ public class Driver {
                     System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Exit\nEnter your choice:");
                     int choice = sc.nextInt();
                     
-                    switch (choice) {
-                        case 1://book a flight
-                            
-                            break;
+                    while (choice != 3) {
+                        switch (choice) {
+                            case 1://book a flight
+                                System.out.println("Enter your desired flight details:");
 
-                        case 2://review flight details
+                                sc.nextLine(); // consume the newline character
+                                System.out.println("Enter desired country:");
+                                String country = sc.nextLine();
+            
+                                System.out.println("Enter your budget:");
+                                double cost = sc.nextDouble();
+            
+                                System.out.println("Enter your desired date of departure (MM/DD/YYYY):");
+                                String[] date = sc.nextLine().split("/");
+                                Date departureDate = new Date(date[0], date[1], date[2]);
 
-                            break;
+                                Flight userFlight = new Flight(country, cost, "Flight", "", departureDate);
+                                FlightBooking fb = new FlightBooking(passenger, userFlight);
 
-                        case 3://exit
-
-                            break;
-                    
-                        default: //invalid choice
-                            break;
+    
+                                break;
+    
+                            case 2://review flight details
+                                System.out.println("Flight Details:");
+                                passenger.getFlight().display();
+    
+                                break;
+    
+                            case 3://exit
+                                System.out.println("Exiting...");
+                                break;
+                        
+                            default: //invalid choice
+                                System.out.println("Invalid choice. Please try again.");
+                                break;
+                        }
+                        System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Exit\nEnter your choice:");
+                        choice = sc.nextInt();
                     }
 
                     break;
