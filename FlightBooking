@@ -50,7 +50,7 @@ public class FlightBooking {
   /**
   *  Allows the customer to choose from a list of selected flights, and sets their flight to it
   **/
-  public void bookFlight(customer pass, Flight[] arr{
+  public void bookFlight(customer pass, Flight[] arr){
       System.out.println("We recommend these flight based on your search");
       printFlights(arr); //print the selection
       System.out.println("Please enter the flight you want to book:");
