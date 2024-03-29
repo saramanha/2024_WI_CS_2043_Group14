@@ -6,14 +6,12 @@ public class FlightBooking {
    // Instance variables
  private Customer passenger;          // Changed to Customer object when added to main
  private Flight customerFlight;       // Flight input by the customer
- private ArrayList<Flight> allFlights; // List of all the flights in the system
  private ArrayList<Flight> bestFlights; // List of best flights for the customer
 
     // Constructor
   public FlightBooking(Customer passengerIn, Flight flightIn) {
         passenger = passengerIn;
         customerFlight = flightIn;
-        allFlights = new ArrayList<Flight>();
         bestFlights = new ArrayList<Flight>();
     }
 
@@ -21,7 +19,7 @@ public class FlightBooking {
   /**
   *  WIP Method: Should check the flights and make compares what the customer wants for the flight.
   **/
-   public ArrayList<Flight> findBestFlights() {
+   public ArrayList<Flight> findBestFlights(ArrayList<Flight> allFlights) {
         for (Flight flight : allFlights) { //loop through all the flights
             int matches = 0; // Used to count how many matches we have so far with the customer's request
 
