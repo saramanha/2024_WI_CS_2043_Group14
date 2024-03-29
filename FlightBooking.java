@@ -10,10 +10,10 @@ public class FlightBooking {
  private ArrayList<Flight> bestFlights; // List of best flights for the User
 
     // Constructor
-  public FlightBooking(User passengerIn, Flight flightIn) {
+  public FlightBooking(User passengerIn, Flight flightIn, ArrayList<Flight> allFlightsIn) {
         passenger = passengerIn;
         userFlight = flightIn;
-        allFlights = new ArrayList<Flight>();
+        allFlights = allFlightsIn;
         bestFlights = new ArrayList<Flight>();
     }
 
@@ -60,7 +60,7 @@ public class FlightBooking {
       int choice = scanner.nextInt();
       if (choice >= 0 && choice < arr.length) { //make sure input is in the selection
           System.out.println("You have chosen to book " + arr[choice].getName());
-          pass.bookFlight(arr[choice]);
+          pass.setFlight(arr[choice]);
       } 
 
       else {
@@ -71,11 +71,7 @@ public class FlightBooking {
   public void printFlights(Flight[] arr){
       for(int i = 0; i < arr.length; i++){
           System.out.println("Flight " + i + ": " + arr[i].getName());
-      {
-  }
-
-
-
-
+        }
+    }
 
 }

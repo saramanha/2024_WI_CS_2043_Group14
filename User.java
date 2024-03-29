@@ -44,6 +44,10 @@ public class User {
         return flight;
     }
 
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
 
     public void setName(String name) {
         this.name = name;

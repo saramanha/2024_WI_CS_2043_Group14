@@ -98,9 +98,9 @@ public class Driver {
                                 Date departureDate = new Date(date[0], date[1], date[2]);
 
                                 Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
-                                FlightBooking fb = new FlightBooking(passenger, userFlight);
+                                FlightBooking fb = new FlightBooking(passenger, userFlight, totalflights);
 
-                                ArrayList<Flight> flights = fb.findBestFlights(totalFlights);
+                                ArrayList<Flight> flights = fb.findBestFlights();
 
                                 fb.bookFlight(passenger, flights.toArray(new Flight[flights.size()]));
 
@@ -168,29 +168,27 @@ public class Driver {
     }
 
     public static ArrayList<Flight> loadFlights() {
-        public static ArrayList<Flight> loadFlightsFromFile(String filename) {
-            ArrayList<Flight> flights = new ArrayList<>();
+        ArrayList<Flight> flights = new ArrayList<>();
     
-            try (BufferedReader br = new BufferedReader(new FileReader(FLIGHTS_FILENAME))) {
-                String line;
+        try (BufferedReader br = new BufferedReader(new FileReader(FLIGHTS_FILENAME))) {
+            String line;
     
-                while ((line = br.readLine()) != null) {
-                    String[] parts = line.split(",");
-                    if (parts.length == 4) {
-                        double cost = Double.parseDouble(parts[0]);
-                        Date startDate = parseDate(parts[1]);
-                        Date endDate = parseDate(parts[2]);
-                        String destination = parts[3].trim(); // Remove leading/trailing spaces
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 4) {
+                    String countryName = parts[0];
+                    double cost = Double.parseDouble(parts[1]);
+                    String name = parts[2];
+                    String destination = parts[3];
+                    Date startDate = parseDate(parts[4]);
     
-                        Flight flight = new Flight(cost, startDate, endDate, destination);
-                        flights.add(flight);
-                    }
+                    Flight flight = new Flight(countryName, cost, name, destination, startDate);
+                    flights.add(flight);
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Handle exception as per your application's requirements
             }
-    
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
             return flights;
     }
 
