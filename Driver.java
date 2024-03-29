@@ -120,10 +120,13 @@ public class Driver {
     
                             case 3://currency converter
                                 sc.nextLine(); // consume the newline character
+                                System.out.println("Currency Converter (USD to another currency)");
                                 System.out.println("Enter the country you want to convert to:");
                                 String countryName = sc.nextLine();
 
                                 CurrencyConversion converter = new CurrencyConversion(passenger.getFlight().getDestination(), passenger.getFlight());
+                                double convertedAmount = converter.convert();
+                                System.out.println("The cost of the flight in " + countryName + " is " + convertedAmount + " " + passenger.getFlight().getDestination().getCurName() + ".");
 
                                 break;
 
