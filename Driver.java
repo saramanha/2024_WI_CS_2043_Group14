@@ -15,6 +15,7 @@ public class Driver {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userbase = loadUsers(); // file where user data is stored
         ArrayList<Country> countries = loadCountries(); // file where country data is stored
+        ArrayList<Flight> totalflights = loadFlights();
 
         System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Register\n2. Login\n3. Exit\nEnter your choice:");
         int n = sc.nextInt();
@@ -99,7 +100,7 @@ public class Driver {
                                 Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
                                 FlightBooking fb = new FlightBooking(passenger, userFlight);
 
-                                ArrayList<Flight> flights = fb.findBestFlights();
+                                ArrayList<Flight> flights = fb.findBestFlights(totalFlights);
 
                                 fb.bookFlight(passenger, flights.toArray(new Flight[flights.size()]));
 
@@ -164,6 +165,41 @@ public class Driver {
             
         }
         sc.close();
+    }
+
+    public static ArrayList<Flight> loadFlights() {
+        public static ArrayList<Flight> loadFlightsFromFile(String filename) {
+            ArrayList<Flight> flights = new ArrayList<>();
+    
+            try (BufferedReader br = new BufferedReader(new FileReader(FLIGHTS_FILENAME))) {
+                String line;
+    
+                while ((line = br.readLine()) != null) {
+                    String[] parts = line.split(",");
+                    if (parts.length == 4) {
+                        double cost = Double.parseDouble(parts[0]);
+                        Date startDate = parseDate(parts[1]);
+                        Date endDate = parseDate(parts[2]);
+                        String destination = parts[3].trim(); // Remove leading/trailing spaces
+    
+                        Flight flight = new Flight(cost, startDate, endDate, destination);
+                        flights.add(flight);
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Handle exception as per your application's requirements
+            }
+    
+            return flights;
+    }
+
+    private static Date parseDate(String dateStr) {
+        String[] dateParts = dateStr.split("-");
+        int year = Integer.parseInt(dateParts[0]);
+        int month = Integer.parseInt(dateParts[1]);
+        int day = Integer.parseInt(dateParts[2]);
+        return new Date(year, month, day);
     }
 
     private static ArrayList<User> loadUsers() { //load users from file
