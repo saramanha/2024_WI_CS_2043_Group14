@@ -173,7 +173,7 @@ public class Driver {
     public static ArrayList<Flight> loadFlights() {
         ArrayList<Flight> flights = new ArrayList<>();
     
-        try (BufferedReader br = new BufferedReader(new FileReader(FLIGHTS_FILENAME))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(FLIGHT_FILENAME))) {
             String line;
     
             while ((line = br.readLine()) != null) {
