@@ -4,6 +4,7 @@ public class Date {
 	private int year;
 	private int month;
 	private int day;
+	private final int[] daysInMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
 	
 	//class method
 	public Date(int yearIn, int monthIn, int dayIn) {
@@ -36,6 +37,26 @@ public class Date {
 	
 	public void setDay(int dayIn) {
 		day = dayIn;
+	}
+
+	public int toDays() {
+		int days = this.day;
+		int months = this.month;
+		int years = this.year;
+
+		for (int i = 1; i < months; i++) {
+			days += daysInMonth[i - 1];
+		}
+
+		for (int i = 1; i < years; i++) {
+			if (i % 4 == 0) {
+				days += 366;
+			} else {
+				days += 365;
+			}
+		}
+
+		return days;
 	}
 	
 	/**

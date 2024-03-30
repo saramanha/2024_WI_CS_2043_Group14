@@ -34,7 +34,7 @@ public class FlightBooking {
                 matches++; // Add a match if the cost of the flight is between 75% and 125% of the User's order
             }
 
-            if (Math.abs(flight.getStartDate().compareTo(userFlight.getStartDate())) <= 7) {
+            if (flight.getStartDate().toDays() - userFlight.getStartDate().toDays() <= 7 && flight.getStartDate().toDays() - userFlight.getStartDate().toDays() >= -7){
                 matches++; // Add a match if the travel dates are within 7 days of the User's order
             }
 
