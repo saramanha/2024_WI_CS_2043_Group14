@@ -135,7 +135,7 @@ public class Driver {
 
                                     CurrencyConversion converter = new CurrencyConversion(passenger.getFlight().getDestination(), passenger.getFlight());
                                     double convertedAmount = converter.convert();
-                                    System.out.println("The cost of the flight in " + passenger.getFlight().getDestination.getCurName() + " is " + convertedAmount + " " + passenger.getFlight().getDestination().getCurName() + ".");
+                                    System.out.println("The cost of the flight in " + passenger.getFlight().getDestination().getCurName() + " is " + convertedAmount + " " + passenger.getFlight().getDestination().getCurName() + ".");
 
                                 break;
                             }
@@ -144,8 +144,8 @@ public class Driver {
                             //bandaid fix because Kaile didnt implement weather tracker
                             case 4://weather Tracker
                                 if (passenger.getFlight() != null) {
-                                    String output = passenger.getFlight().getWeather();
-                                    System.out.println(output);
+                                    //String output = passenger.getFlight().getWeather();
+                                    //3System.out.println(output);
                                 }
                                 else {
                                     System.out.println("You have not booked a flight yet.");
