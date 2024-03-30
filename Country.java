@@ -3,63 +3,83 @@ public class Country{
   private String countryName; //name of the country
   private String currencyName; //type of currency
   private double conversion; //conversion rate
-  //private weatherIntegration weather
   private double temperature;
 
   public Country(String countryName, String currencyName, double conversion, double temperature){
-	  this.countryName = countryName;
-      this.currencyName = currencyName;
-      this.conversion = conversion;
-      this.temperature = temperature;
-  }
-
-  // Get methods
-
-   public String getCurName(){
-		      return currencyName;
-	  }
-
-	public String getCountryName(){
-		      return countryName;
-	  }
-
-   public double getConver(){
-		      return conversion;
-	  }
-
-   //public String getWeather(){
-	//	      return weather;
-	//  }
-
-   public double getTemp(){
-		      return temperature;
-	  }
-
-   public void setCurName(String newName){
-		      currencyName = newName;
-	  }
-
-   public void setConver(double newConver){
-		      conversion = newConver;
-	  }
-
-   //public void setWeather(weatherIntegration newWeather){
-	//	      weather = newWeather;
-	 // }
-
-   public void setTemp(double newTemp){
-		      temperature = newTemp;
+	      this.countryName = countryName;
+	      this.currencyName = currencyName;
+	      this.conversion = conversion;
+	      this.temperature = temperature;
 	  }
 	
-    //display/toString function
-    public void display() {
-    			  System.out.println("Currency Name: " + currencyName);
-    			  System.out.println("Conversion Rate: " + conversion);
-    			  System.out.println("Weather: " + "weather");
-    			  System.out.println("Temperature: " + temperature);
-    		  }
+	  // Get methods
 
+   	   /**
+	   * Provides information of the country's currency.
+	   * @return The name of the country's currency.
+	   */
+	   public String getCurName(){
+			      return currencyName;
+		  }
 
+	    /**
+	    * Provides the information of the country's name.
+	    * @return The name of the country.
+	    */
+	   public String getCountryName(){
+			      return countryName;
+		  }
 
-  
+	    /**
+	    * Provides the conversion rate of the country to CAD.
+	    * @return The conversion rate of the country to CAD.
+	    */
+	   public double getConver(){
+			      return conversion;
+		  }
+
+	     /**
+	    * Provides the current temperature at the country. (in Celsius)
+	    * @return The temperature of the country. (in Celsius)
+	    */
+	   public double getTemp(){
+			      return temperature;
+		  }
+
+	    /**
+	    * Sets the country's currency name.
+	    * @param newName - The new currency name for the country.
+	    */
+	   public void setCurName(String newName){
+			      currencyName = newName;
+		  }
+	    /**
+	    * Sets the country's conversion rate to CAD.
+	    * @param newConver - The new conversion rate to CAD.
+	    */
+	   public void setConver(double newConver){
+			      conversion = newConver;
+		  }
+		
+	   /**
+	    * Sets the country's new temperature. (in Celsius)
+	    * @param newTemp - The new temperature.
+	    */	
+	   public void setTemp(double newTemp){
+			      temperature = newTemp;
+		  }
+		
+	    /**
+	    * Prints out the Flight's information at the terminal.
+	    */
+	    public void display() {
+	    			  System.out.println("Currency Name: " + currencyName);
+	    			  System.out.println("Conversion Rate: " + conversion);
+	    			  System.out.println("Weather: " + "weather");
+	    			  System.out.println("Temperature: " + temperature);
+	    		  }
+	
+	
+	
+	  
 }
