@@ -6,7 +6,7 @@ public class CurrencyConversion{
 
   //class method
   public CurrencyConversion(Country countryIn, Flight flightIn){
-    countryRate = countryIn.getConversionRate();
+    countryRate = countryIn.getConver();
     flightCost = flightIn.getCost();
   }
 

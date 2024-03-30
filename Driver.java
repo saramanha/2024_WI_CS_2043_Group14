@@ -96,7 +96,7 @@ public class Driver {
             
                                 System.out.println("Enter your desired date of departure (MM/DD/YYYY):");
                                 String[] date = sc.nextLine().split("/");
-                                Date departureDate = new Date(date[0], date[1], date[2]);
+                                Date departureDate = new Date(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2]));
 
                                 Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
                                 FlightBooking fb = new FlightBooking(passenger, userFlight, totalflights);
@@ -202,7 +202,7 @@ public class Driver {
     }
 
     private static Date parseDate(String dateStr) {
-        String[] dateParts = dateStr.split("-");
+        String[] dateParts = dateStr.split("/");
         int year = Integer.parseInt(dateParts[0]);
         int month = Integer.parseInt(dateParts[1]);
         int day = Integer.parseInt(dateParts[2]);

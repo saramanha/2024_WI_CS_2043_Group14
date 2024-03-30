@@ -1,12 +1,12 @@
 public class Date {
 	
 	//inst. var.
-	private String year;
-	private String month;
-	private String day;
+	private int year;
+	private int month;
+	private int day;
 	
 	//class method
-	public Date(String yearIn, String monthIn, String dayIn) {
+	public Date(int yearIn, int monthIn, int dayIn) {
 		year = yearIn;
 		month = monthIn;
 		day = dayIn;
@@ -14,32 +14,32 @@ public class Date {
 	
 	//other methods
 
-	public String getYear() {
+	public int getYear() {
 		return year;
 	}
 	
-	public String geMonth() {
+	public int geMonth() {
 		return month;
 	}
 	
-	public String getDay() {
+	public int getDay() {
 		return day;
 	}
 
-	public void setYear(String yearIn) {
+	public void setYear(int yearIn) {
 		year = yearIn;
 	}
 	
-	public void setMonth(String monthIn) {
+	public void setMonth(int monthIn) {
 		month = monthIn;
 	}
 	
-	public void setDay(String dayIn) {
+	public void setDay(int dayIn) {
 		day = dayIn;
 	}
 	
 	/**
-	 * this method returns a string that shows month and day
+	 * this method returns a int that shows month and day
 	 * @return year/month/day
 	 */
 	public String display() {
