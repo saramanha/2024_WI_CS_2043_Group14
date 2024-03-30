@@ -6,7 +6,7 @@ public class Flight {
 	  private String flightName;
 	  private String insurance;    //change to insurance object soon
 	  private Date startDate;
-	  private String weather;
+	  private WeatherInformation weather;
 
 	  //class method
 	  public Flight(Country countryIn, double costIn, String nameIn, String insuranceIn, Date startIn){
