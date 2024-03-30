@@ -3,3 +3,8 @@ United States,749.99,United,2024/03/31
 South Korea,1549.99,Air Canada,2024/05/15
 Germany,1200,Emerates,2024/04/02
 China,1799,Air Canada,2024/06/15
+Philippines,1234,Starflight,2024/12/23
+China,850,Emerates,2025/01/23
+Philippines,2190,Starflight,2024/06/22
+Japan,1636,Dazai Air,2025/01/21
+Japan,1324,Air Canada,2024/06/12
