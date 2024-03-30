@@ -87,10 +87,12 @@ public class Driver {
 
                                         System.out.println("Enter your budget:");
                                         double cost = sc.nextDouble();
+                                        sc.nextLine(); // consume the newline character
                     
                                         System.out.println("Enter your desired date of departure (MM/DD/YYYY):");
                                         String[] date = sc.nextLine().split("/");
-                                        Date departureDate = new Date(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2]));
+                                        Date departureDate = new Date(Integer.parseInt(date[2]), Integer.parseInt(date[0]), Integer.parseInt(date[1]));
+
 
                                         Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
                                         FlightBooking fb = new FlightBooking(passenger, userFlight, totalflights);

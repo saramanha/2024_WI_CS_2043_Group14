@@ -82,7 +82,7 @@ public class Flight {
 	  
 	  public void display() {
 		  System.out.println("Flight Name: " + flightName);
-		  System.out.println("Destination: " + country);
+		  System.out.println("Destination: " + country.getCountryName());
 		  System.out.println("Cost: $" + cost);
 		  System.out.println("Insurance: " + insurance);
 		  System.out.println("Flight Takes off at: " + startDate.display());

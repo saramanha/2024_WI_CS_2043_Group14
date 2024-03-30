@@ -19,7 +19,7 @@ public class Date {
 		return year;
 	}
 	
-	public int geMonth() {
+	public int getMonth() {
 		return month;
 	}
 	
@@ -40,9 +40,11 @@ public class Date {
 	}
 
 	public int toDays() {
-		int days = this.day;
-		int months = this.month;
-		int years = this.year;
+		int days = day;
+		int months = month;
+		int years = year;
+
+		
 
 		for (int i = 1; i < months; i++) {
 			days += daysInMonth[i - 1];
