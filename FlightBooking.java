@@ -26,7 +26,7 @@ public class FlightBooking {
         for (Flight flight : allFlights) { //loop through all the flights
             int matches = 0; // Used to count how many matches we have so far with the User's request
 
-            if (flight.getDestination() == userFlight.getDestination()) {
+            if (flight.getDestination().getCountryName().equals(userFlight.getDestination().getCountryName())) {
                 matches++; // Add a match if we have the same destination as the User's order
             }
 
