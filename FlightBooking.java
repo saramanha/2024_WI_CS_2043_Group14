@@ -83,7 +83,7 @@ public class FlightBooking {
    */
   public void printFlights(Flight[] arr){
       for(int i = 0; i < arr.length; i++){
-          System.out.println("Flight " + i + ": " + arr[i].getName() + " to " + arr[i].getDestination());
+          System.out.println("Flight " + i + ": " + arr[i].getName() + " to " + arr[i].getDestination().getCountryName());
         }
     }
 
