@@ -115,6 +115,11 @@ public class User {
     
     /**
      * Prints out all of the user's information out in the terminal. 
+     * @return  "Name: name
+                 Payment Info: paymentInfo
+                 Password: password
+                 Mobile: mobile
+                 Address: address"
      */
     public void display() {
         System.out.println("Name: " + name);
