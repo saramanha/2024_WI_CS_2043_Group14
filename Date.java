@@ -39,17 +39,20 @@ public class Date {
 		day = dayIn;
 	}
 
+	//turns months and years into their equivalent in days
 	public int toDays() {
+		//instantiate vars
 		int days = day;
 		int months = month;
 		int years = year;
 
 		
-
+		//months ---> days
 		for (int i = 1; i < months; i++) {
 			days += daysInMonth[i - 1];
 		}
 
+		//years ---> days
 		for (int i = 1; i < years; i++) {
 			if (i % 4 == 0) {
 				days += 366;
