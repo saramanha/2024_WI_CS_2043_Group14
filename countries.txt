@@ -6,3 +6,5 @@ United Kingdom,GBP,0.79,20
 Germany,EUR,0.93,20
 South Korea,KRW,1346.3,20
 France,EUR,0.93,20
+Japan,YEN,0.0089,17
+Philippines,PHP,0.024,31
