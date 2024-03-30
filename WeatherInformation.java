@@ -1,7 +1,7 @@
 
 import java.util.Random;
 
-class WeatherInfo{
+public class WeatherInformation{
 
     public void assignRandomWeather(Flight flight) {
 
