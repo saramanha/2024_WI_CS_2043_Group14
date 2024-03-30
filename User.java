@@ -114,7 +114,7 @@ public class User {
     }
     
     /**
-     * Prints out all of the user's information out in the terminal. 
+     * Prints out all of the user's information out in the terminal. (toString() method)
      * @return  "Name: name
                  Payment Info: paymentInfo
                  Password: password
