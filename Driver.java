@@ -237,7 +237,7 @@ public class Driver {
     }
 
     private static void saveUsers(ArrayList<User> users) { //save users to file 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(USER_FILENAME))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(USER_FILENAME, false))) {
             for (User user : users) {
                 bw.write(user.getName() + "," + user.getpayment() + "," + user.getPassword() + "," + user.getMobile() + "," + user.getAddress());
                 bw.newLine();
