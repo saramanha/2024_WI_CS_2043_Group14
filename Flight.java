@@ -6,6 +6,7 @@ public class Flight {
 	  private String flightName;
 	  private String insurance;    //change to insurance object soon
 	  private Date startDate;
+	  private String weather;
 
 	  //class method
 	  public Flight(Country countryIn, double costIn, String nameIn, String insuranceIn, Date startIn){
@@ -14,7 +15,7 @@ public class Flight {
 	    flightName = nameIn;
 	    insurance = insuranceIn;
 	    startDate = startIn;
-
+	    this.weather = null;
 	  }
 
 	  //get methods
