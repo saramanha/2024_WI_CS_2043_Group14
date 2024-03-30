@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -172,6 +173,7 @@ public class Driver {
 
     public static ArrayList<Flight> loadFlights() {
         ArrayList<Flight> flights = new ArrayList<>();
+        ArrayList<Country> countries = loadCountries();
     
         try (BufferedReader br = new BufferedReader(new FileReader(FLIGHT_FILENAME))) {
             String line;
@@ -184,9 +186,13 @@ public class Driver {
                     String name = parts[2];
                     String destination = parts[3];
                     Date startDate = parseDate(parts[4]);
-    
-                    Flight flight = new Flight(countryName, cost, name, destination, startDate);
-                    flights.add(flight);
+
+                    for (Country country : countries) {
+                        if (country.getCountryName().equals(countryName)) {
+                            Flight flight = new Flight(country, cost, name, destination, startDate);
+                            flights.add(flight);
+                        }
+                    }
                 }
             }
         } catch (IOException e) {
