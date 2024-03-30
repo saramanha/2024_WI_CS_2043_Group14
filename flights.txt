@@ -1,5 +1,5 @@
 Canada,500,Air Canada,null,01/01/2024
 United States,749.99,United,03/31/2024
-South Korea,1549.99,Air Canada, 05/15/2024
+South Korea,1549.99,Air Canada,05/15/2024
 Germany,1200,Emerates,04/02/2024
 China,1799,Air Canada,06/15/2024

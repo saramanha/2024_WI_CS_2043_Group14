@@ -79,31 +79,33 @@ public class Driver {
                                 sc.nextLine(); // consume the newline character
                                 System.out.println("Enter desired country:");
                                 String country = sc.nextLine();
-                                Country userCountry;
+                                Country userCountry = null;
 
                                 for (Country countryCheck : countries) {
                                     if (countryCheck.getCountryName().equals(country)) {
                                         userCountry = countryCheck;
-                                    }
-                                    else {
-                                        System.out.println("Country not found. Please try again.");
+
+                                        System.out.println("Enter your budget:");
+                                        double cost = sc.nextDouble();
+                    
+                                        System.out.println("Enter your desired date of departure (MM/DD/YYYY):");
+                                        String[] date = sc.nextLine().split("/");
+                                        Date departureDate = new Date(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2]));
+
+                                        Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
+                                        FlightBooking fb = new FlightBooking(passenger, userFlight, totalflights);
+
+                                        ArrayList<Flight> flights = fb.findBestFlights();
+
+                                        fb.bookFlight(passenger, flights.toArray(new Flight[flights.size()]));
                                         break;
                                     }
+
+                                    if (userCountry == null) {
+                                        System.out.println("Country not found. Please try again.");
+                                    }
+                                    
                                 }
-            
-                                System.out.println("Enter your budget:");
-                                double cost = sc.nextDouble();
-            
-                                System.out.println("Enter your desired date of departure (MM/DD/YYYY):");
-                                String[] date = sc.nextLine().split("/");
-                                Date departureDate = new Date(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2]));
-
-                                Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
-                                FlightBooking fb = new FlightBooking(passenger, userFlight, totalflights);
-
-                                ArrayList<Flight> flights = fb.findBestFlights();
-
-                                fb.bookFlight(passenger, flights.toArray(new Flight[flights.size()]));
 
     
                                 break;
@@ -135,8 +137,9 @@ public class Driver {
                             //TODO: Implement weather tracker
                             case 4://weather Tracker
                                 if (passenger.getFlight() != null) {
-                                    String output = passenger.getFlight().getDestination().getWeather().toString();
-                                    System.out.println(output);
+                                    //Code does not compile without weather stuff from Kaile have to comment out
+                                    //String output = passenger.getFlight().getDestination().getWeather().toString();
+                                    //System.out.println(output);
                                 }
                                 else {
                                     System.out.println("You have not booked a flight yet.");
@@ -184,12 +187,11 @@ public class Driver {
                     String countryName = parts[0];
                     double cost = Double.parseDouble(parts[1]);
                     String name = parts[2];
-                    String destination = parts[3];
-                    Date startDate = parseDate(parts[4]);
+                    Date startDate = parseDate(parts[3]);
 
                     for (Country country : countries) {
                         if (country.getCountryName().equals(countryName)) {
-                            Flight flight = new Flight(country, cost, name, destination, startDate);
+                            Flight flight = new Flight(country, cost, name, null, startDate);
                             flights.add(flight);
                         }
                     }
