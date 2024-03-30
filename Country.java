@@ -71,11 +71,13 @@ public class Country{
 		
 	    /**
 	    * Prints out the Flight's information at the terminal.
+     	    * @return  "Currency Name: currencyName
+	  		Conversion Rate: conversion
+     			Temperature: temperature"
 	    */
 	    public void display() {
 	    			  System.out.println("Currency Name: " + currencyName);
 	    			  System.out.println("Conversion Rate: " + conversion);
-	    			  System.out.println("Weather: " + "weather");
 	    			  System.out.println("Temperature: " + temperature);
 	    		  }
 	
