@@ -19,7 +19,8 @@ public class FlightBooking {
 
   //other methods
   /**
-  *  WIP Method: Should check the flights and make compares what the User wants for the flight.
+  *  Checks the Flights database compares what the User wants for the flight.
+  *  @return An array of flights that match what the user is searching for.
   **/
    public ArrayList<Flight> findBestFlights() {
         for (Flight flight : allFlights) { //loop through all the flights
@@ -51,6 +52,8 @@ public class FlightBooking {
   
   /**
   *  Allows the User to choose from a list of selected flights, and sets their flight to it
+  *  @param pass - the User who is booking the flight
+  *  @param arr - The Flight array list to show all Flights in the database.
   **/
   public void bookFlight(User pass, Flight[] arr){
       System.out.println("We recommend these flight based on your search");
@@ -68,6 +71,10 @@ public class FlightBooking {
         }
   }
 
+   /**
+   * Prints out the Flights database set in an Flights array
+   * @param arr The array of Flights from the database.
+   */
   public void printFlights(Flight[] arr){
       for(int i = 0; i < arr.length; i++){
           System.out.println("Flight " + i + ": " + arr[i].getName());
