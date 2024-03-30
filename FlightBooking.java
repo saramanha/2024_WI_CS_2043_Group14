@@ -56,7 +56,7 @@ public class FlightBooking {
   *  @param arr - The Flight array list to show all Flights in the database.
   **/
   public void bookFlight(User pass, Flight[] arr){
-      if(arr.length() > 0){
+      if(arr.length > 0){
       System.out.println("We recommend these flight based on your search:");
       printFlights(arr); //print the selection
       System.out.println("Please enter the flight you want to book:");
@@ -72,9 +72,10 @@ public class FlightBooking {
         }
       }
 
-     else:
+     else{
          System.out.println("No flights matching your description are available at the moment");
-  }
+    } 
+    }
 
    /**
    * Prints out the Flights database set in an Flights array
