@@ -54,6 +54,10 @@ public class Flight {
 	  public Date getStartDate(){
 		  return startDate;
 	  }
+
+	  public WeatherInformation getWeather() {
+		  return weather;
+	  }
 	  
 	  //set methods
 

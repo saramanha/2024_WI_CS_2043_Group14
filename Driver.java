@@ -145,7 +145,7 @@ public class Driver {
                             case 4://weather Tracker
                                 if (passenger.getFlight() != null) {
                                     //Code does not compile without weather stuff from Kaile have to comment out
-                                    //String output = passenger.getFlight().getDestination().getWeather().toString();
+                                    //String output = passenger.getFlight().getWeather();
                                     //System.out.println(output);
                                 }
                                 else {
