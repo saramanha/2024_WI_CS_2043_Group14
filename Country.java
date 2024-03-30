@@ -70,7 +70,7 @@ public class Country{
 		  }
 		
 	    /**
-	    * Prints out the Flight's information at the terminal.
+	    * Prints out the Flight's information at the terminal. (toString() method)
      	    * @return  "Currency Name: currencyName
 	  		Conversion Rate: conversion
      			Temperature: temperature"
