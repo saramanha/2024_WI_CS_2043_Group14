@@ -4,12 +4,12 @@ public class Flight {
 	  private Country country;      
 	  private double cost;
 	  private String flightName;
-	  private String insurance;    //change to insurance object soon
+	  private Insurance insurance;    //change to insurance object soon
 	  private Date startDate;
 	  private WeatherInformation weather;
 
 	  //constructor
-	  public Flight(Country countryIn, double costIn, String nameIn, String insuranceIn, Date startIn){
+	  public Flight(Country countryIn, double costIn, String nameIn, Insurance insuranceIn, Date startIn){
 	    country = countryIn;
 	    cost = costIn;
 	    flightName = nameIn;
@@ -49,7 +49,7 @@ public class Flight {
    	  * @return the flight insurance.
 	  **/
 	  public String getInsurance(){
-	      return insurance;
+	      return insurance.getLevel();
 	  }
 	  
 	  /**
@@ -98,7 +98,7 @@ public class Flight {
 	  * This method sets insurance of the flight.
    	  * @param the flight insurance.
 	  **/
-	  public void setInsurance(String insuranceIn) {
+	  public void setInsurance(Insurance insuranceIn) {
 		  insurance = insuranceIn;
 	  }
 
@@ -130,7 +130,7 @@ public class Flight {
 		  System.out.println("Flight Name: " + flightName);
 		  System.out.println("Destination: " + country.getCountryName());
 		  System.out.println("Cost: $" + cost);
-		  System.out.println("Insurance: " + insurance);
+		  System.out.println("Insurance: " + insurance.getLevel());
 		  System.out.println("Flight Takes off at: " + startDate.display());
 	  }
 
