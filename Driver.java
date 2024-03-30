@@ -68,10 +68,10 @@ public class Driver {
                         break;
                     }
 
-                    System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Exit\nEnter your choice:");
+                    System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Currency Converter\n4. Weather Report\n5. Exit\nEnter your choice:");
                     int choice = sc.nextInt();
                     
-                    while (choice != 3) {
+                    while (choice != 5) {
                         switch (choice) {
                             case 1://book a flight
                                 System.out.println("Enter your desired flight details:");
