@@ -14,6 +14,7 @@ public class CurrencyConversion{
 
   /**
   *  Grabs the flight's costs and converts it into the user's country rate.
+  *  @return the converted flight cost.
   **/
   public double convert(){
     double convertedCost = flightCost * countryRate;
