@@ -9,7 +9,7 @@ class WeatherInfo{
         Random random = new Random();
         
         int index = random.nextInt(weatherConditions.length);
-        flight.weather = weatherConditions[index];
+        flight.setWeather(null, weatherConditions[index]);
     }
 
 }

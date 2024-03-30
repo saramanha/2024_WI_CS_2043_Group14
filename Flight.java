@@ -79,6 +79,10 @@ public class Flight {
 	  public void setStartDate(Date startIn) {
 		  startDate = startIn;
 	  }
+
+	  public void setWeather(WeatherInformation weather) {
+		  this.weather = weather;
+	  }
 		  
 	  
 	  public void display() {
