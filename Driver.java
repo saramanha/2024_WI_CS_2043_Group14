@@ -141,12 +141,11 @@ public class Driver {
                             }
 
                             //WEATHER TRACKER NOT IMPLEMENTED YET WAITING ON KAILE
-                            //TODO: Implement weather tracker
+                            //bandaid fix because Kaile didnt implement weather tracker
                             case 4://weather Tracker
                                 if (passenger.getFlight() != null) {
-                                    //Code does not compile without weather stuff from Kaile have to comment out
-                                    //String output = passenger.getFlight().getWeather();
-                                    //System.out.println(output);
+                                    String output = passenger.getFlight().getWeather();
+                                    System.out.println(output);
                                 }
                                 else {
                                     System.out.println("You have not booked a flight yet.");
