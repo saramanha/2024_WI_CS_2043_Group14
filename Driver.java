@@ -103,12 +103,12 @@ public class Driver {
                                         break;
                                     }
 
-                                    if (userCountry == null) {
-                                        System.out.println("Country not found. Please try again.");
-                                    }
                                     
                                 }
 
+                                if (userCountry == null) {
+                                    System.out.println("Country not found. Please try again.");
+                                }
     
                                 break;
                             
@@ -124,16 +124,21 @@ public class Driver {
                                 break;
     
                             case 3://currency converter
-                                sc.nextLine(); // consume the newline character
-                                System.out.println("Currency Converter (USD to another currency)");
-                                System.out.println("Enter the country you want to convert to:");
-                                String countryName = sc.nextLine();
+                                if (passenger.getFlight() == null) {
+                                    System.out.println("You have not booked a flight yet.");
+                                    break;
+                                    
+                                }
+                                else{
+                                    sc.nextLine(); // consume the newline character
+                                    System.out.println("Currency Converter (USD to another currency)");
 
-                                CurrencyConversion converter = new CurrencyConversion(passenger.getFlight().getDestination(), passenger.getFlight());
-                                double convertedAmount = converter.convert();
-                                System.out.println("The cost of the flight in " + countryName + " is " + convertedAmount + " " + passenger.getFlight().getDestination().getCurName() + ".");
+                                    CurrencyConversion converter = new CurrencyConversion(passenger.getFlight().getDestination(), passenger.getFlight());
+                                    double convertedAmount = converter.convert();
+                                    System.out.println("The cost of the flight in " + passenger.getFlight().getDestination.getCurName() + " is " + convertedAmount + " " + passenger.getFlight().getDestination().getCurName() + ".");
 
                                 break;
+                            }
 
                             //WEATHER TRACKER NOT IMPLEMENTED YET WAITING ON KAILE
                             //TODO: Implement weather tracker
@@ -156,7 +161,7 @@ public class Driver {
                                 System.out.println("Invalid choice. Please try again.");
                                 break;
                         }
-                        System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Exit\nEnter your choice:");
+                        System.out.println("Flight Booking System\nWhat action are you looking for?\n1. Book a flight\n2. Review Flight Details\n3. Currency Converter\n4. Weather Report\n5. Exit\nEnter your choice:");
                         choice = sc.nextInt();
                     }
 
