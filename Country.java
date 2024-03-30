@@ -1,7 +1,8 @@
 public class Country{
-  private String countryName;
-  private String currencyName;
-  private double conversion;
+  //This class represents a country/destination for each flight
+  private String countryName; //name of the country
+  private String currencyName; //type of currency
+  private double conversion; //conversion rate
   //private weatherIntegration weather
   private double temperature;
 
@@ -49,7 +50,8 @@ public class Country{
    public void setTemp(double newTemp){
 		      temperature = newTemp;
 	  }
-
+	
+    //display/toString function
     public void display() {
     			  System.out.println("Currency Name: " + currencyName);
     			  System.out.println("Conversion Rate: " + conversion);
