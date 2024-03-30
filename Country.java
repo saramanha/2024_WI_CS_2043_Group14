@@ -54,8 +54,8 @@ public class Country{
 			      currencyName = newName;
 		  }
 	    /**
-	    * Sets the country's conversion rate to CAD.
-	    * @param newConver - The new conversion rate to CAD.
+	    * Sets the country's conversion rate.
+	    * @param newConver - The new conversion rate.
 	    */
 	   public void setConver(double newConver){
 			      conversion = newConver;
