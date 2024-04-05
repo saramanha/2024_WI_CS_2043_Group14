@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -94,7 +93,7 @@ public class Driver {
                                         Date departureDate = new Date(Integer.parseInt(date[2]), Integer.parseInt(date[0]), Integer.parseInt(date[1]));
 
 
-                                        Flight userFlight = new Flight(userCountry, cost, "Flight", "", departureDate);
+                                        Flight userFlight = new Flight(userCountry, cost, "Flight", null, departureDate);
                                         FlightBooking fb = new FlightBooking(passenger, userFlight, totalflights);
 
                                         ArrayList<Flight> flights = fb.findBestFlights();

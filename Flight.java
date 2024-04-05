@@ -6,7 +6,7 @@ public class Flight {
 	  private String flightName;
 	  private Insurance insurance;    //change to insurance object soon
 	  private Date startDate;
-	  private WeatherInformation weather;
+	  private String weather;
 
 	  //constructor
 	  public Flight(Country countryIn, double costIn, String nameIn, Insurance insuranceIn, Date startIn){
@@ -64,7 +64,7 @@ public class Flight {
    	   * This method returns the current weathor conditions of the flight's destination.
        	   * @return the weather at the flight's destination.
        	  **/
-	  public WeatherInformation getWeather() {
+	  public String getWeather() {
 		  return weather;
 	  }
 	  
@@ -114,7 +114,7 @@ public class Flight {
 	  * This method sets the current weather of the flight's destination.
    	  * @param the flight destination's weather.
 	  **/
-	  public void setWeather(WeatherInformation weather) {
+	  public void setWeather(String weather) {
 		  this.weather = weather;
 	  }
 		  

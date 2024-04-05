@@ -50,7 +50,7 @@ public class Insurance {
 	 * 			Cost: insuranceCost"
 	 */
 	public void display() {
-		System.out.println("Insurance Level: ", insuranceLevel);
-		System.out.println("Cost: ", insuranceCost);
+		System.out.println("Insurance Level: " +  insuranceLevel);
+		System.out.println("Cost: " + insuranceCost);
 	}
 }
